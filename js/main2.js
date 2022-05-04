@@ -20,7 +20,7 @@ function headEvnt() {
         headerWrap.style.height = 70 + "px";
       });
     } else { 
-        this.classList.remove("on");
+        gnbMenu[i].classList.remove("on");
         // headerWrap.getElementsByClassName.height = 70 + "px";
         headerWrap.style.height = 70 + "px";
     }
