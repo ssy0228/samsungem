@@ -4,20 +4,26 @@ function headEvnt() {
   const headerWrap = document.querySelector(".header_wrap");
 
   for (let i = 0; i < gnbMenu.length; i++) {
-    gnbMenu[i].addEventListener("mouseover", () => {
-      // this.className += "on";
-      this.classList.add("on");
-      let ht = this.children[1].offsetHeight;
-      this.children[1].style.transition = "all 0.3s ease-in-out";
-      headerWrap.style.height = 70 + ht + "px";
-      headerWrap.style.transition = "all 0.3s ease-in-out";
-    });
-
-    gnbMenu[i].addEventListener("mouseout", () => {
-      this.classList.remove("on");
-      // headerWrap.getElementsByClassName.height = 70 + "px";
-      headerWrap.style.height = 70 + "px";
-    });
+    if (gnbMenu[i] == this) {
+      gnbMenu[i].addEventListener("mouseover", () => {
+        // this.className += "on";
+        this.classList.add("on");
+        let ht = this.children[1].offsetHeight;
+        this.children[1].style.transition = "all 0.3s ease-in-out";
+        headerWrap.style.height = 70 + ht + "px";
+        headerWrap.style.transition = "all 0.3s ease-in-out";
+      });
+  
+      gnbMenu[i].addEventListener("mouseout", () => {
+        this.classList.remove("on");
+        // headerWrap.getElementsByClassName.height = 70 + "px";
+        headerWrap.style.height = 70 + "px";
+      });
+    } else { 
+        this.classList.remove("on");
+        // headerWrap.getElementsByClassName.height = 70 + "px";
+        headerWrap.style.height = 70 + "px";
+    }
   }
 }
 window.addEventListener("load", headEvnt);

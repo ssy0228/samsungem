@@ -7,8 +7,8 @@
   <title>삼성전기</title>
   <link rel="stylesheet" href="css/importcss.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/jquery-1.12.4.min.js"></script>
-  <script src="js/includehtml.js"></script>
+  <!-- <script src="js/jquery-1.12.4.min.js"></script> -->
+  <!-- <script src="js/includehtml.js"></script> -->
   <script src="js/main2.js"></script>
 </head>
 <body>
@@ -17,7 +17,15 @@
   <!-- //[D] 본문 바로가기 -->
   <!-- <div id="wrap"> -->
     <!-- [D] header -->
-    <header id="header"></header>
+    <header id="header">
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script src="js/jquery.includeHTML.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $("#header").loadHTML("header.html");
+        });
+      </script>
+    </header>
     <!-- //[D] header -->
     <!-- [D] main_visual -->
     <div class="main_visual">
@@ -49,9 +57,9 @@
       </div>
       <div class="slide_roll">
         <ul>
-          <li><button type="button" class="on">1번 슬라이드로 이동</button></li>
-          <li><button type="button" class="">2번 슬라이드로 이동</button></li>
-          <li><button type="button" class="">3번 슬라이드로 이동</button></li>
+          <li><button class="on">1번 슬라이드로 이동</button></li>
+          <li><button class="">2번 슬라이드로 이동</button></li>
+          <li><button class="">3번 슬라이드로 이동</button></li>
         </ul>
         <!-- <a href="#" class="btn_play off">재생/멈춤</a> -->
         <button type="button" class="btn_play stop">재생/멈춤</button>
@@ -219,7 +227,15 @@
     </div>
     <!-- //[D] sitemap -->
     <!-- [D] footer -->
-    <footer id="footer"></footer>
+    <footer id="footer">
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script src="js/jquery.includeHTML.min.js"></script>
+      <script>
+        $(document).ready(function () {
+                    $("#footer").loadHTML("footer.html");
+			  });
+      </script>
+    </footer>
   <!-- </div> -->
 </body>
 <!-- <script src="js/jquery.mousewheel.min.js"></script> -->
