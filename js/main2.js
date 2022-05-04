@@ -1,7 +1,7 @@
 "use strict";
 function headEvnt() {
-  const gnbMenu = document.querySelectorAll(".gnb>ul>li");
-  const headerWrap = document.querySelector(".header_wrap");
+  const gnbMenu = document.querySelectorAll("#header .gnb>ul>li");
+  const headerWrap = document.querySelector("#header .header_wrap");
 
   for (let i = 0; i < gnbMenu.length; i++) {
     if (gnbMenu[i] == this) {
