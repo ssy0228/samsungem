@@ -7,8 +7,8 @@
   <title>삼성전기</title>
   <link rel="stylesheet" href="css/importcss.css">
   <link rel="stylesheet" href="css/main.css">
-  <script src="js/jquery-1.12.4.min.js"></script>
-  <script src="js/includehtml.js"></script>
+  <!-- <script src="js/jquery-1.12.4.min.js"></script> -->
+  <!-- <script src="js/includehtml.js"></script> -->
   <script src="js/main2.js"></script>
 </head>
 <body>
@@ -17,7 +17,12 @@
   <!-- //[D] 본문 바로가기 -->
   <!-- <div id="wrap"> -->
     <!-- [D] header -->
-    <header id="header"></header>
+    <header id="header">
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script>
+        $("#header").load("header.html").innerHTML.getElementbyId("header");
+      </script>
+    </header>
     <!-- //[D] header -->
     <!-- [D] main_visual -->
     <div class="main_visual">
@@ -219,7 +224,12 @@
     </div>
     <!-- //[D] sitemap -->
     <!-- [D] footer -->
-    <footer id="footer"></footer>
+    <footer id="footer">
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script>
+        $("#footer").load("footer.html").innerHTML.getElementbyId("footer");
+      </script>
+    </footer>
   <!-- </div> -->
 </body>
 <!-- <script src="js/jquery.mousewheel.min.js"></script> -->

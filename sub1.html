@@ -9,15 +9,20 @@
   <link rel="stylesheet" href="css/sub1.css">
 </head>
 <body>
-<script src="js/jquery-1.12.4.min.js"></script>  
-<script src="js/includehtml.js"></script>
+<!-- <script src="js/jquery-1.12.4.min.js"></script>   -->
+<!-- <script src="js/includehtml.js"></script> -->
 <script src="js/main2.js"></script>
 <!-- [D] 본문 바로가기 -->
   <div id="skipNavi"><a href="#container">본문으로 바로가기</a></div>
 <!-- //[D] 본문 바로가기 -->
   <!-- <div id="wrap"> -->
     <!-- [D] header -->
-    <header id="header"></header>
+    <header id="header">
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script>
+        $("#header").load("header.html").innerHTML.getElementbyId("header");
+      </script>
+    </header>
     <!-- //[D] header -->
     <!-- [D] container -->
     <div id="container">
@@ -251,7 +256,12 @@
       </div>
     </div>  
     <!-- [D] footer -->
-    <footer id="footer"></footer>
+    <footer id="footer">
+      <script src="js/jquery-1.12.4.min.js"></script>
+      <script>
+        $("#footer").load("footer.html").innerHTML.getElementbyId("footer");
+      </script>
+    </footer>
     <!-- //[D] footer -->
   <!-- </div> -->
 </body>
