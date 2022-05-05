@@ -3,7 +3,7 @@ function headEvnt() {
   const gnbMenu = document.querySelectorAll(".gnb>ul>li");
   const headerWrap = document.querySelector(".header_wrap");
 
-  gnbMenu.forEach(item => {
+  gnbMenu.forEach((item) => {
     item.addEventListener("mouseover", () => {
       // this.className += "on";
       item.classList.add("on");
@@ -19,22 +19,19 @@ function headEvnt() {
       headerWrap.style.height = `${70}px`;
     });
   });
-
-
-
 }
 window.addEventListener("load", headEvnt);
 
 function srchEvnt() {
-  const srchBtn = document.querySelector(".btn_srch");
-  const srchCloseBtn = document.querySelector(".btn_srch_close");
-  const srchWrap = document.querySelector(".srch_wrap");
-  srchBtn.addEventListener("click", () => {
-    // srchWrap.className += "on";
+  const srchBtn = document.querySelector("button.btn_srch");
+  const srchCloseBtn = document.querySelector("button.btn_srch_close");
+  const srchWrap = document.querySelector("div.srch_wrap");
+  console.log(srchBtn);
+  srchBtn.addEventListener("click", function () {
     srchWrap.classList.add("on");
   });
 
-  srchCloseBtn.addEventListener("click", () => {
+  srchCloseBtn.addEventListener("click", function () {
     srchWrap.classList.remove("on");
   });
 }
@@ -46,7 +43,7 @@ function slidEvnt() {
   const btnPrev = document.querySelector(".btn_prv");
   const slide = document.querySelectorAll(".slide");
   const slideRoll = document.querySelectorAll(".slide_roll>ul button");
-  const btnPlay = document.querySelector(".btn_play");
+  const btnPlay = document.querySelector("button.btn_play");
 
   let bnnNum = 0;
   let lastNum = slide.length - 1;
@@ -65,6 +62,7 @@ function slidEvnt() {
     });
     slideRoll[bnnNum].classList.add("on");
   });
+
   btnPrev.addEventListener("click", () => {
     bnnNum--;
     if (bnnNum < 0) {
@@ -102,15 +100,17 @@ function slidEvnt() {
 
   //배너재생 멈춤버튼
   let flag = true;
-  btnPlay.addEventListener("click", () => {
-    if (flag) {
-      clearInterval(autoBnn);
-      this.classList.remove("stop");
-      flag = false;
-    } else {
-      autoBnn = setInterval(autoBanner, 6000);
-      this.classList.add("stop");
-      flag = true;
+  btnPlay.addEventListener("click", function () {
+    if (this == btnPlay) {
+      if (flag) {
+        this.classList.remove("stop");
+        clearInterval(autoBnn);
+        flag = false;
+      } else {
+        autoBnn = setInterval(autoBanner, 6000);
+        this.classList.add("stop");
+        flag = true;
+      }
     }
   });
 

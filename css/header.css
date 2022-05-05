@@ -63,12 +63,12 @@ dl.topMenu { position: absolute; right: 60px; top: 0; }
 .topMenu>dd:last-of-type>ul>li { text-align: center; padding: 10px 0; } 
 
 /* 검색버튼 */
-div.btn_srch { position: absolute; right: 0; top: 0; } 
-.btn_srch a { display: block; width: 60px; height: 71px; text-indent: -9999px; overflow: hidden; background: #043285 url(../images/btn_srch_ico.png) no-repeat 50% 50%; } 
+button[type="button"].btn_srch { position: absolute; right: 0; top: 0; width: 60px; height: 71px; text-indent: -9999px; overflow: hidden; background: #043285 url(../images/btn_srch_ico.png) no-repeat 50% 50%; outline: none; border: none; cursor: pointer; } 
+
 
 /* 검색박스 */
 div.srch_wrap { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); } 
-div.srch_wrap.on { display: block; }
+.srch_wrap.on { display: block; }
 div.srch_inner { position: absolute; left: 0; top: 70px; width: 100%; height: 200px; padding-top: 60px; background: url(../images/srch_pop_bg.jpg) no-repeat 50% 50%; } 
 .srch_inner>form { width: 655px; margin: 0 auto; } 
 .srch_inner>form>fieldset { width: 100%; height: 55px; background: #fff; margin-bottom: 20px; } 
