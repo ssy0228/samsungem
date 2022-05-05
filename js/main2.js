@@ -1,38 +1,34 @@
 "use strict";
 function headEvnt() {
-  const gnbMenu = document.querySelectorAll("#header .gnb>ul>li");
-  const headerWrap = document.querySelector("#header .header_wrap");
+  const gnbMenu = document.querySelectorAll(".gnb>ul>li");
+  const headerWrap = document.querySelector(".header_wrap");
 
-  for (let i = 0; i < gnbMenu.length; i++) {
-    if (gnbMenu[i] == this) {
-      gnbMenu[i].addEventListener("mouseover", () => {
-        // this.className += "on";
-        this.classList.add("on");
-        let ht = this.children[1].offsetHeight;
-        this.children[1].style.transition = "all 0.3s ease-in-out";
-        headerWrap.style.height = 70 + ht + "px";
-        headerWrap.style.transition = "all 0.3s ease-in-out";
-      });
-  
-      gnbMenu[i].addEventListener("mouseout", () => {
-        this.classList.remove("on");
-        // headerWrap.getElementsByClassName.height = 70 + "px";
-        headerWrap.style.height = 70 + "px";
-      });
-    } else { 
-        gnbMenu[i].classList.remove("on");
-        // headerWrap.getElementsByClassName.height = 70 + "px";
-        headerWrap.style.height = 70 + "px";
-    }
-  }
+  gnbMenu.forEach(item => {
+    item.addEventListener("mouseover", () => {
+      // this.className += "on";
+      item.classList.add("on");
+      let ht = item.children[1].scrollHeight;
+      item.children[1].style.transition = "all 0.1s ease-in-out";
+      headerWrap.style.height = `${70 + ht}px`;
+      headerWrap.style.transition = "all 0.3s ease-in-out";
+    });
+
+    item.addEventListener("mouseout", () => {
+      item.classList.remove("on");
+      // headerWrap.getElementsByClassName.height = 70 + "px";
+      headerWrap.style.height = `${70}px`;
+    });
+  });
+
+
+
 }
 window.addEventListener("load", headEvnt);
 
 function srchEvnt() {
   const srchBtn = document.querySelector(".btn_srch");
   const srchCloseBtn = document.querySelector(".btn_srch_close");
-  const srchWrap = document.querySelector("div.srch_wrap");
-
+  const srchWrap = document.querySelector(".srch_wrap");
   srchBtn.addEventListener("click", () => {
     // srchWrap.className += "on";
     srchWrap.classList.add("on");
@@ -44,7 +40,6 @@ function srchEvnt() {
 }
 
 window.addEventListener("load", srchEvnt);
-
 
 function slidEvnt() {
   const btnNext = document.querySelector(".btn_next");
@@ -137,9 +132,6 @@ function slidEvnt() {
 }
 
 window.addEventListener("load", slidEvnt);
-
-
-
 
 //top버튼
 function goTop() {
