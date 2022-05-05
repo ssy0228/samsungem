@@ -1,5 +1,11 @@
 
 
+
+
+#header { z-index: 40; position: relative; width: 100%; height: 70px; } 
+.header_wrap { position: fixed; left: 0; top: 0; width: 100%; height: 70px; background-color: #fff; border-bottom: 1px solid #ccc; } 
+  .header_inner { position: relative; width: 100%; background-color: #f3f3f3; }
+
 /* header */
 h1.logo { position: absolute; left: 30px; top: 17px; } 
 h1.logo>a { display: block; width: 177px; height: 37px; background: url(../images/logo.png) no-repeat 0 0; text-indent: -9999px; overflow: hidden; } 
@@ -11,23 +17,26 @@ nav.gnb>ul { width: 100%; text-align: center; }
 .gnb>ul>li>a:after { content: ""; position: absolute; left: 50%; bottom: -1px; width: 0; height: 3px; background: #043285; 
                     transform: translateX(-50%); transition: all 0.3s ease-in-out; } 
 .gnb>ul>li:hover>a:after { width: 100%; height: 3px; } 
-.gnb>ul>li:hover>a:after { width: 100%; height: 3px; } 
-.gnb>ul>li>div { width: 100%; display: none; position: absolute; left: 0; line-height: 40px; transition: opacity 0.3s ease-in-out; } 
+.gnb>ul>li>div { width: 100%; display: none; height: 0px; position: absolute; left: 0; line-height: 40px; opacity: 0; transition: opacity 0.3s ease-in-out; } 
+.gnb>ul>li.on>div { display: block; opacity: 1; padding: 30px 0; } 
 
-.gnb>ul>li.on>div { display: block; } 
-
-/* .gnb>ul>li:nth-child(1)>div { display: none; } */
-.gnb>ul>li>div>ul { margin: 50px 0; } 
+.gnb>ul>li>div>ul { margin-bottom: 30px; } 
 .gnb>ul>li>div>ul>li { display: inline-block; padding: 0 40px; border-right: 1px solid #ddd; vertical-align: top; text-align: left; } 
 .gnb>ul>li>div>ul>li:last-child { border-right: none; } 
+
 .gnb>ul>li>div>ul>li>a { display: block; font-size: 16px; color: #1428a0; font-weight: bold; } 
+
 .gnb>ul>li>div>ul>li>ul { float: left; } 
-.gnb>ul>li>div>ul>li>ul:nth-of-type(2) { margin-left: 40px; } 
-.gnb>ul>li:nth-child(1)>div>ul>li { height: 270px; } 
-.gnb>ul>li:nth-child(2)>div>ul>li { height: 200px; } 
-.gnb>ul>li:nth-child(3)>div>ul>li { height: 121px; } 
-.gnb>ul>li:nth-child(4)>div>ul>li { height: 231px; } 
-.gnb>ul>li:nth-child(5)>div>ul>li { height: 164px; } 
+.gnb>ul>li>div>ul>li>ul:nth-of-type(2) { margin-left: 50px; } 
+
+.gnb>ul>li:first-of-type>div { height: 390px; } 
+.gnb>ul>li:nth-of-type(2)>div { height: 200px; } 
+.gnb>ul>li:nth-of-type(3)>div { height: 120px; } 
+.gnb>ul>li:nth-of-type(4)>div { height: 350px; } 
+.gnb>ul>li:nth-of-type(5)>div { height: 164px; } 
+
+
+
 .gnb_button>a { display: inline-block; border: 1px solid #e2e2e2; border-radius: 5px; padding: 10px 20px 0; 
                 background: url(../images/btn_arrow_ico_l.png) no-repeat 95% 50%; text-align: left; line-height: 30px; } 
 .gnb_button>a>strong { font-size: 18px; font-weight: 600; } 
@@ -59,6 +68,7 @@ div.btn_srch { position: absolute; right: 0; top: 0; }
 
 /* 검색박스 */
 div.srch_wrap { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); } 
+div.srch_wrap.on { display: block; }
 div.srch_inner { position: absolute; left: 0; top: 70px; width: 100%; height: 200px; padding-top: 60px; background: url(../images/srch_pop_bg.jpg) no-repeat 50% 50%; } 
 .srch_inner>form { width: 655px; margin: 0 auto; } 
 .srch_inner>form>fieldset { width: 100%; height: 55px; background: #fff; margin-bottom: 20px; } 
@@ -69,5 +79,5 @@ div.srch_inner { position: absolute; left: 0; top: 70px; width: 100%; height: 20
 .srch_inner>form>ul>li { float: left; height: 45px; padding: 0 29px; margin-right: 10px; border-radius: 5px; 
                           background: #eee url(../images/btn_arrow_ico_m.png) no-repeat 90% 50%; line-height: 45px; } 
 .srch_inner>form>ul>li:last-child { float: right; margin-right: 0; } 
-a.btn_srch_close { position: absolute; right: 0; top: 0; width: 60px; height: 70px; background: #043285 url(../images/srch_pop_close.png) no-repeat 50% 50%; 
+button[type="button"].btn_srch_close { position: absolute; right: 0; top: 0; width: 60px; height: 70px; background: #043285 url(../images/srch_pop_close.png) no-repeat 50% 50%; outline: none; border: none;
                   text-indent: -9999px; overflow: hidden; } 
