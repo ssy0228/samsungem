@@ -29,10 +29,12 @@ function srchEvnt() {
   console.log(srchBtn);
   srchBtn.addEventListener("click", function () {
     srchWrap.classList.add("on");
+    document.body.style.overflow = "hidden";
   });
 
   srchCloseBtn.addEventListener("click", function () {
     srchWrap.classList.remove("on");
+    document.body.style.overflowY= "auto";
   });
 }
 
