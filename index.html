@@ -232,12 +232,13 @@
     <!-- //[D] sitemap -->
     <!-- [D] footer -->
     <footer id="footer">
-      <script src="js/jquery-1.12.4.min.js"></script>
-      <script src="js/jquery.includeHTML.min.js"></script>
       <script>
-        $(document).ready(function () {
-                    $("#footer").loadHTML("footer.html");
-			  });
+        function loadHTML2(){
+          fetch('footer.html')
+          .then(result=>{return result.text();})
+          .then(content=>{document.getElementById("footer").innerHTML = content;})
+        }
+        loadHTML2();
       </script>
     </footer>
   <!-- </div> -->
