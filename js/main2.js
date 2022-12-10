@@ -27,18 +27,26 @@ function srchEvnt() {
   const srchCloseBtn = document.querySelector("button.btn_srch_close");
   const srchWrap = document.querySelector("div.srch_wrap");
   console.log(srchBtn);
-  srchBtn.addEventListener("click", function () {
+  srchBtn.addEventListener("click", function (e) {
+    e.preventDefault;
     srchWrap.classList.add("on");
     document.body.style.overflow = "hidden";
   });
 
-  srchCloseBtn.addEventListener("click", function () {
+  srchCloseBtn.addEventListener("click", function (e) {
+    e.preventDefault;
     srchWrap.classList.remove("on");
     document.body.style.overflowY= "auto";
   });
 }
 
 window.addEventListener("load", srchEvnt);
+
+
+
+
+
+
 
 function slidEvnt() {
   const btnNext = document.querySelector(".btn_next");
